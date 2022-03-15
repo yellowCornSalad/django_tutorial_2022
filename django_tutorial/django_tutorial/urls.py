@@ -15,7 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from community.views import write
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('write/', write, name = 'write'), #path, view의 함수
 ]
