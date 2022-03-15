@@ -7,6 +7,11 @@
     <title>Hello Django</title>
 </head>
 <body>
-    <p>Hello Django body</p>
+    <form action="" method="post">
+        <table>
+        {{ form }} {% csrf_token %}
+        </table>
+        <button type="submit" >확인</button>
+        </form>
 </body>
 </html>
