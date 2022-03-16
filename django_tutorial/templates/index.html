@@ -8,21 +8,24 @@
 </head>
 <body>
         <div class="article_box">
-            <p><span>제목</span> <span>이름</span> <span>작성날짜</span></p>
+            <p><span>제목</span> 
+                <span>이름</span> 
+                <span>작성날짜</span>
+            </p>
 
             <ul>
                 {% for article in latest_article_list %}
                 <li>
-                    <span><a href="/view_detail/{{article.id}}">{{article.title}}</a></span>
+                    <span><a href="community/view_detail/{{article.id}}">{{article.title}}</a></span>
                     <span>{{article.name}}</span>
                     <span>{{article.cdate | date:"Y년 M d일 D"}}</span>
                 </li>
             {% endfor %}
             </ul>
         </div>
-<p><a href="list/">전체 목록보기</a></p>
+<p><a href="community/list/">전체 목록보기</a></p>
 
-    <button><a href = "write/">메모하기</a></button>
+    <button><a href = "community/write/">메모하기</a></button>
 
 </body>
 </html>
