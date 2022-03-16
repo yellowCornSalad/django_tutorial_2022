@@ -4,7 +4,7 @@ from community.forms import Form
 
 # 저장 소스코드
 def write(request):
-    if request.method == 'POST':
+    if request.method == 'POST': # POST=> 코드보안
         form = Form(request.POST)
         if form.is_valid():
             form.save() # 필드값 저장함.
