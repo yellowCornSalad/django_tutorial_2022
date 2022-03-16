@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .article_box{
+            width:500px;
+            background-color: rgb(32, 128, 96);    
+        }
+        p>span{
+            padding: 10px;
+            text-align: center;
+        }
+        p>span:first-of-type{
+            width: 150px;
+            display: inline-block;
+        }
+        ul{
+            border-top: 2px solid rgb(25, 111, 117);
+        }
+        ul>li>span{
+            margin: 5px;
+        }
+        ul>li>span:first-of-type{
+            width: 150px;
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="article_box">
+        <p>
+            <span>이름</span>
+            <span>제목</span>
+            <span>작성 날짜</span>
+        </p>
+        <ul>
+            {%for i in article_list%}
+            <li>
+                <a href="/view_detail/{{i.id}}"><span>{{i.name}}</span></a> 
+                <span> {{i.title}}</span>
+                <span> {{i.cdate |date:"Y년 M d일 D"}} </span>
+            </li>
+            {% endfor %}
+        </ul>
+    </div>
+
+</body>
+
+</html>
