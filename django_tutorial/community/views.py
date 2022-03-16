@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import *
 from community.forms import Form
 from .models import Article
 # Create your views here.
@@ -9,6 +9,7 @@ def write(request):
         form = Form(request.POST)
         if form.is_valid():
             form.save() # 필드값 저장함.
+            return redirect('.') # 새로고침했을때 데이터들 꺠끗하게 지워줌
     # 빈 form페이지 요청
     else:
         form =Form()
@@ -20,6 +21,6 @@ def articleList(request):
     return render(request, 'list.html', {'article_list': article_list})
     
 def viewDetail(request, num=1):
-    article_detail = Article.objects.get(id=num)
-    # article_detail = get_object_or_404(Article, id=num)
+    # article_detail = Article.objects.get(id=num) # id 대신 pk도 가능
+    article_detail = get_object_or_404(Article, pk=num) # 존재하지 않는 쪽수 입력시 404츨력
     return render(request, 'view_detail.html', {'article_detail': article_detail})
