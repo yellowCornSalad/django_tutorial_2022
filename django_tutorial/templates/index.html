@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <div class="article_box">
+            <p><span>제목</span> <span>이름</span> <span>작성날짜</span></p>
+
+            <ul>
+                {% for article in latest_article_list %}
+                <li>
+                    <span><a href="/view_detail/{{article.id}}">{{article.title}}</a></span>
+                    <span>{{article.name}}</span>
+                    <span>{{article.cdate | date:"Y년 M d일 D"}}</span>
+                </li>
+            {% endfor %}
+            </ul>
+        </div>
+<p><a href="list/">전체 목록보기</a></p>
+
+    <button><a href = "write/">메모하기</a></button>
+
+</body>
+</html>
