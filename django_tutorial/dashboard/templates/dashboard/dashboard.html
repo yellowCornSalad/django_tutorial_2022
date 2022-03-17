@@ -16,14 +16,15 @@
     <title>Document</title>
 </head>
 <body>
-    {{  dataset  }}
+    {% load crispy_forms_tags %}
     <div class="row mt-3 pt-3">
         <div class="col-md-4">
             <div class="border p-3 shadow">
                 <h4>Add Data</h4>
                 <form method="post">
-                        {{  form  }}  {% csrf_token %}
-                        <button type = "submit"> Add</button>
+                        {{  form | crispy  }}  {% csrf_token %}
+                        <!-- btn-block 초록색으로 꽉채워서 만들어줌 -->
+                        <button type = "submit" class = "btn btn-success btn-block"> Add</button>
                 </form>
             </div>
         </div>
