@@ -48,7 +48,7 @@ const myChart = new Chart(ctx, {
             // data: [50, 100],
             data: [
                 {%for data in dataset %}
-                        {{ data.population }},
+                        '{{ data.population }}',
         {% endfor %}
         ],
             backgroundColor: [
