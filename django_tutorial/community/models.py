@@ -8,3 +8,8 @@ class Article(models.Model):
     url = models.URLField()
     email = models.EmailField()
     cdate = models.DateTimeField(auto_now_add= True)
+    
+    class Meta:
+        verbose_name_plural = '글 저장하기'
+    def __str__(self):
+        return f'{self.title} -- {self.name} -- {self.cdate}'

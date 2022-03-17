@@ -21,4 +21,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name='index'),
     path('community/', include('community.urls')),
+    path('dashboard/', include('dashboard.urls')), # include community에 설정되어있는 것을 합침
 ]
