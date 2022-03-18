@@ -1,35 +1,13 @@
 {% extends "./partials/base.html" %}
+{% load static %}
 {% block title %}장고 프로젝트 홈{% endblock %}
 
 {% block part_style %}
-        <style>
-            .article_box{
-              width: 500px;
-              background-color: rgb(213, 214, 214);
-            }
-            p > span{
-              padding: 10px 20px;
-              text-align: center;
-            }
-            p > span:first-of-type{
-              width: 150px;
-              display: inline-block;
-            }
-            ul {
-              border-top: 2px solid gray;
-            }
-            ul > li> span{
-              margin: 5px;
-            }
-            ul > li> span:first-of-type{
-              width: 150px;
-              display: inline-block;
-            }
-          </style>
-{% endblock %}
+        <link rel="stylesheet" href="{% static 'css/index.css' %}">
+{% endblock part_style%}
 
 {% block content %}
-        <div class="article_box">
+        <div class='article_box'>
             <p><span>제목</span> 
                 <span>이름</span> 
                 <span>작성날짜</span>
@@ -44,9 +22,13 @@
                 </li>
             {% endfor %}
             </ul>
-        </div>
 <p><a href="community/list/">전체 목록보기</a></p>
     <button><a href = "community/write/">메모하기</a></button>
-    
-    <p><img src = "./imgs/image01.jpeg" alt = "오로라 이미지"></p>
+  </div>
+
+  <p class = 'main_img'> <img src="{% static '/imgs/image.jpg' %}" alt="오로라 이미지">
+  </p>
+  <p class = 'main_img'> <img src="{% static '/imgs/image.jpg' %}" alt="오로라 이미지">
+  </p>
+
     {% endblock %}
