@@ -15,11 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from community.views import index
 
+app_name = "community"
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', index, name='index'),
+    path('', include('single_page.urls')),
     path('community/', include('community.urls')),
-    path('dashboard/', include('dashboard.urls')), # include community에 설정되어있는 것을 합침
+    path('dashboard/', include('dashboard.urls')),
+
 ]
