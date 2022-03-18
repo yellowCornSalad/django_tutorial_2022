@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'community',
     'dashboard',
     'crispy_forms',
+    'single_page',
 ]
 # crispy_forms 설정
 CRISPY_TEMPLATE_PACK = 'bootstrap4'

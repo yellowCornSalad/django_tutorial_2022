@@ -26,4 +26,4 @@ def viewDetail(request, num=1):
     return render(request, 'community/view_detail.html', {'article_detail': article_detail})
 def index(request): # 메모 남기기 index.html 페이지 구형
     latest_article_list = Article.objects.all().order_by('-cdate')[:3]
-    return render(request, 'index.html', {'latest_article_list': latest_article_list})
+    return render(request, 'single_page/index.html', {'latest_article_list': latest_article_list})
