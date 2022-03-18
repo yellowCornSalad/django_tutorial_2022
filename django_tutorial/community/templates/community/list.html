@@ -1,5 +1,6 @@
 <!-- 상속을 통해서 내비바에서 넘어갈 수 있도록 해줌 -->
 {% extends "partials/base.html" %}
+{% block title %} 글 전체 목록 {% endblock %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -13,7 +14,7 @@
     <style>
         .article_box{
             width:500px;
-            background-color: rgb(32, 128, 96);    
+            background-color: rgba(108, 141, 163, 0.5);    
         }
         p>span{
             padding: 10px;
@@ -24,7 +25,7 @@
             display: inline-block;
         }
         ul{
-            border-top: 2px solid rgb(25, 111, 117);
+            border-top: 2px solid rgb(71, 105, 107);
         }
         ul>li>span{
             margin: 5px;
