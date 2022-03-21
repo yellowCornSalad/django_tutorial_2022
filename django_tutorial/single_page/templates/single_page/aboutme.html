@@ -1,9 +1,14 @@
 {% extends "base.html" %}
-{% block part_script %}<script src = 'https://kit.fontawesome.com' crossorigin="anonymous"></script>{% endblock %}
+{% load static %}
+{% block part_script %}
+<link rel="stylesheet" href="{% static 'css/aboutme.css' %}">
+<!-- <script src = 'https://kit.fontawesome.com' crossorigin="anonymous"></script>{% endblock %} -->
+
+{% endblock %}
 
 {% block title %} 자기소개 {% endblock %}
 
 {% block content %}
-    <p> 내 소개 </p>
+    <p> <i class = "fas fa-apple-alt"> 내 소개</p>
 {% endblock content %}
 
