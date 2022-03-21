@@ -1,25 +1,26 @@
 {% extends "base.html" %}
-
+{% load widget_tweaks %}
 {% block title %}로그인{% endblock title %}
 
 {% block content %}
-  <h1>Please Login</h1>
+  <h1>{{ title }}</h1>
   <p class=""font-italic>ID와 Password를 입력하세요.</p>
 
   <div class="alert alert-danger">
     <div class="font-weight-hold">입력한 값이 정확하지 않습니다. 다시 확인하세요.</div>
   </div>
   <form action="." method="post" class="card pt-3">
+    {% csrf_token %}
     <div class="form-group row">
-      {{ add_label_class:"col-form-label col-sm-3 ml-3 font-weight-bold" }}
+      {{ form.username | add_label_class:"col-form-label col-sm-3 ml-3 font-weight-bold" }}
       <div class="col-sm-6">
-        {{ add_class:"form-control"|attr:"autofocus" }}
+        {{ form.username | add_class:"form-control"|attr:"autofocus" }}
       </div>
     </div>
     <div class="form-group row">
-      {{ add_label_class:"col-form-label col-sm-3 ml-3 font-weight-bold" }}
+      {{ form.password | add_label_class:"col-form-label col-sm-3 ml-3 font-weight-bold" }}
       <div class="col-sm-6">
-        {{ add_class:"form-control" }}  
+        {{ form.password | add_class:"form-control" }}  
       </div>
     </div>
     <div class="form-group">
