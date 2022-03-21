@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}수정 가능한 목록{% endblock %}
+
+{% block part_style %}
+<link rel="stylesheet" href="{% static 'css/list.css' %}">
+{% endblock %}
+{% block content %}
+  <h1>글 변경 목록 -{{ user }}</h1>
+  <div class="article_box">
+    <table class="table table-bodered table-condensed table-striped">
+      <tr class="table-primary">
+        <th>제목</th>
+        <th>이름</th>
+        <th>작성날짜</th>
+        <th>수정</th>
+        <th>삭제</th>
+      </tr>
+      {% for article in object_list %}
+      <tr>
+      <td><a href="{% url 'community:view_detail' article.id %}">{{ article.title }}</a></td>
+      <td>{{ article.name }}</td>
+      <td>{{ article.cdate|date:"Y년 M d일 D" }}</td>
+      <td><a href="{% url 'community:update' article.id %}">수정</a></td>
+      <td><a href="{% url 'community:delete' article.id %}">삭제</a></td>
+      </tr>  
+      {% endfor %}      
+    </table>
+  </div>
+{% endblock content %}

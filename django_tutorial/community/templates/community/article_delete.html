@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+{% block title %}글 삭제 - {{ object.pk }}{% endblock %}
+{% load crispy_forms_tags  %}
+{% block content %}
+  <h1>메모글 작성</h1>
+  <p>by {{ user }}</p>
+
+  <form action="" method="post">
+    {% csrf_token %}
+    <p>{{ object }}를 정말 삭제 하겠습니까?</p>
+    <input type="submit" value="삭제" class="btn btn-danger btn-sm">
+  </form>
+  
+  {% endblock content %}

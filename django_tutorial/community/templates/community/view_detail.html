@@ -1,30 +1,43 @@
-<!-- 상속을 통해서 내비바에서 넘어갈 수 있도록 해줌 -->
 {% extends "base.html" %}
-{% block title %} {{article_detail.pk}} 번글 세부내용 {% endblock %}
- 
-{% block content %}
-<table>
-    <tr>
-            <td>no</td>
-            <td>{{ article_detail.pk}}</td>
-    </tr>
-    <tr>
-            <td>제목</td>
-            <td>{{ article_detail.title }} </td>
-    </tr>
-    <tr>
-            <td>저자</td>
-            <td>{{ article_detail.name }} </td>
-    </tr>
-    
-    <tr>
-            <td>내용</td>
-            <td>{{ article_detail.contents }} </td>
-    </tr>
-    <tr>
-            <td>Email</td>
-            <td>{{ article_detail.email }}</td>
-    </tr>
-    </table>
+{% block title %}{{ object.pk }}번글 세부내용{% endblock %}
 
-{% endblock %}
+{% block content %}
+<div>
+  <table>
+    <tr>
+      <th>no</th>
+      <td>{{ object.pk }}</td>
+    </tr>
+    <tr>
+      <th>제목</th>
+      <td>{{ object.title}}</td>
+    </tr>
+    <tr>
+      <th>작성자</th>
+      <td>{{ object.name}}</td>
+    </tr>
+    <tr>
+      <th>내용</th>
+      <td>{{ object.contents }}</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>{{ object.url }}/td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>{{ object.email }}</td>
+    </tr>
+    <tr>
+      <th></th>
+      <td>{{ object.cdate }}</td>
+    </tr>
+  </table>
+</div>
+<div>
+<br>
+<button><a href="{% url 'community:update' object.id %}">수정</a></button>
+<button><a href="{% url 'community:delete' object.id %}">삭제</a></button>
+
+</div>
+  {% endblock content %}
