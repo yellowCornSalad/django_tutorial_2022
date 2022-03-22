@@ -1,7 +1,11 @@
 from pydoc import ModuleScanner
 from django.contrib import admin
-
-# Register your models here.
 from dashboard import models
 
-admin.site.register(models.CountryData)
+
+class CountryDataAdmin(admin.ModelAdmin):
+
+    list_display = ('country', 'population')
+
+
+admin.site.register(models.CountryData, CountryDataAdmin)
