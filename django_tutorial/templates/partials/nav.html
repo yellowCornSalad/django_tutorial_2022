@@ -1,55 +1,59 @@
 <div class="nav navbar-dark bg-primary">
-  <div class ="container">
+  <div class="container">
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-      <span class="navbar-brand mx-5 mb-0 font-weight-bold font-italic"><a class="nav-link text-white" href="{% url 'single_page:index' %}">Naver</a></span>
+      <span class="navbar-brand mx-5 mb-0 font-weight-bold font-italic"><a class="nav-link text-white"
+          href="{% url 'single_page:index' %}">Naver</a></span>
       <!-- href="{% url 'single_page:index' %}" 앱이름:path이름 -->
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent">
-          <span class="navbar-toggler-icon"></span>
+        <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-              <li class="nav-item mx-1 btn btn-primary">
-                  <a class="nav-link text-white" href="#">AboutMe</a></li>
-              <li class="nav-item mx-1 btn btn-primary">
-                  <a class="nav-link text-white" href="{% url 'community:write' %}">Memo</a></li>
-              <li class="nav-item mx-1 btn btn-primary">
-                  <a class="nav-link text-white" href="{% url 'dashboard:dashboard' %}">Dashboard</a></li>
-  
-                  <li class="nav-item dropdown mx-1 btn btn-primary">
-                    <a class="nav-link dropdown-toggle text-white" href="#" data-toggle="dropdown">Util</a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item" href="{% url 'admin:index' %}">Admin</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="{% url 'community:article_list' %}">메모 리스트</a>
-                        <a class="dropdown-item" href="#">변경 가능 리스트</a>
-                    </div>
-                </li>
-            </ul>
-            <!-- 로그인 인증 -->
-            <ul class="navbar-nav ml-5 mr-5">
-              <li class="nav-item dropdown mx-1 btn btn-primary">
-                {% if user.is_active %}
-                  <a class="nav-link dropdown-toggle text-white" href="#" data-toggle="dropdown">
-                    <i class="fas fa-user-lock"></i>&ensp; &ensp;{% firstof user.get_short_name user.get_username %}</a>
-  
-                  <div class="dropdown-menu">
-                    <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
-                    <a class="dropdown-item" href="{% url 'password_change' %}">Change Password</a>
-                  </div>
-                  {% else %}
-                  <a class="nav-link dropdown-toggle text-white" href="#" data-toggle="dropdown">
-                    <i class="fas fa-lock-open"></i>&ensp;Anonymous&ensp;</a>
-  
-  
-                  <div class="dropdown-menu">
-                    <a class="dropdown-item" href="{% url 'login' %}">Login</a>
-                    <a class="dropdown-item" href="{% url 'register' %}">Register</a>
-                  </div>
-                  {% endif %}
-                </li>
-              </ul>
-      
-          </div>
-      </nav>
-    </div>
-    </div>
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item mx-1 btn btn-primary">
+            <a class="nav-link text-white" href="#">AboutMe</a>
+          </li>
+          <li class="nav-item mx-1 btn btn-primary">
+            <a class="nav-link text-white" href="{% url 'community:article_list' %}">메모 목록</a>
+          </li>
+          <li class="nav-item mx-1 btn btn-primary">
+            <a class="nav-link text-white" href="{% url 'dashboard:dashboard' %}">Dashboard</a>
+          </li>
+
+          <li class="nav-item dropdown mx-1 btn btn-primary">
+            <a class="nav-link dropdown-toggle text-white" href="#" data-toggle="dropdown">Util</a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="{% url 'admin:index' %}">Admin</a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="{% url 'community:write' %}">메모 작성</a>
+              <a class="dropdown-item" href="{% url 'community:change_list' %}">변경 가능 리스트</a>
+            </div>
+          </li>
+        </ul>
+        <!-- 로그인 인증 -->
+        <ul class="navbar-nav ml-5 mr-5">
+          <li class="nav-item dropdown mx-1 btn btn-primary">
+            {% if user.is_active %}
+            <a class="nav-link dropdown-toggle text-white" href="#" data-toggle="dropdown">
+              <i class="fas fa-user-lock"></i>&ensp; &ensp;{% firstof user.get_short_name user.get_username %}</a>
+
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
+              <a class="dropdown-item" href="{% url 'password_change' %}">Change Password</a>
+            </div>
+            {% else %}
+            <a class="nav-link dropdown-toggle text-white" href="#" data-toggle="dropdown">
+              <i class="fas fa-lock-open"></i>&ensp;Anonymous&ensp;</a>
+
+
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="{% url 'login' %}">Login</a>
+              <a class="dropdown-item" href="{% url 'register' %}">Register</a>
+            </div>
+            {% endif %}
+          </li>
+        </ul>
+
+      </div>
+    </nav>
+  </div>
+</div>

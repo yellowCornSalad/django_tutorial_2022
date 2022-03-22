@@ -7,6 +7,7 @@ let con_h = document.querySelector('div#content').clientHeight;
 let footer_h = document.querySelector('footer').clientHeight;
 console.log(nav_h, con_h, footer_h)
 console.log(window.innerHeight)
-if (doc_h >= window.innerHeight){
+doc_h = nav_h + con_h + footer_h
+if (doc_h >= window.innerHeight) {
     document.querySelector('footer').classList.remove('fixed-bottom')
 }

@@ -6,24 +6,25 @@
 <link rel="stylesheet" href="{% static 'css/list.css' %}">
 {% endblock %}
 {% block content %}
-  <div class="article_box">
-    <p>
-      <table>
-        <tr>
-          <th>제목</th>
-          <th>이름</th>
-          <th>작성 날짜</th>
-          <th></th>
-          <th></th>
-        </tr>
-        {% for article in object_list %}
-        <tr>
-          <td><a href="{% url 'community:view_detail' article.id %}">{{ article.title }}</a></td>
-          <td>{{ article.name }}</td>
-          <td>{{ article.cdate|date:"Y년 M d일 D" }}</td>
-        </tr>
-        {% endfor %}
-      </table>
-  </div>
-  <p><a href="{% url 'community:change_list' %}">변경 가능 리스트</a>&nbsp;&nbsp;<a href="{% url 'community:write' %}">메모글 작성</a></p>
+<div class="article_box mt-5">
+  <p class="font-weight-bold text-right">
+    <a class="border p-2" href="{% url 'community:change_list' %}">변경 가능 리스트</a>&nbsp;&nbsp;
+    <a class="border p-2" href="{% url 'community:write' %}">메모글
+      작성</a>
+  </p>
+  <table class="table table-bodered table-condensed table-striped">
+    <tr class="table-primary">
+      <th>제목</th>
+      <th>이름</th>
+      <th>작성 날짜</th>
+    </tr>
+    {% for article in object_list %}
+    <tr>
+      <td><a href="{% url 'community:view_detail' article.id %}">{{ article.title }}</a></td>
+      <td>{{ article.name }}</td>
+      <td>{{ article.cdate|date:"Y년 M d일 D" }}</td>
+    </tr>
+    {% endfor %}
+  </table>
+</div>
 {% endblock content %}
