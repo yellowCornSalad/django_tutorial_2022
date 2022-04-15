@@ -1,0 +1,294 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+ul, ol{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+/* 데코 시작 */
+header{
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+}
+header .inner{
+    width: 1180px;
+    height: 120px;
+    margin: 0px auto;
+    /* 자식 absolute 요소의 기준점 설정 */
+    position: relative;
+}
+/* 제목을 왼쪽 상단 바닥에 붙어 있을 수 있도록 해줌 */
+header .inner h1{
+    position: absolute;
+    left: 0px;
+    bottom: 15px;
+}
+header .inner h1 a{
+    /* font 축약형
+    *24px/1 => line-height = 1
+    /1 은 바닥으로부터 떨어진 높이를 뜻함*/
+    font: bold 24px/1 "arial";
+    color: #444;
+}
+/* 우측으로 밀어넣기 */
+header .inner .util{
+    position: absolute;
+    top: 20px;
+    right: 30px;
+}
+/* 오른쪽 일자 정렬 */
+header .inner .util li{
+    float: left;
+}
+/* 색깔 입힌 후 일정한 간격 유지 */
+header .inner .util li a{
+    display: block;
+    font: 12px/1 "arial";
+    color: #999;
+    padding: 0px 10px;
+}
+/* 우측 정렬 및 초기화 
+메뉴1
+메뉴2
+메뉴3
+메뉴4*/
+header .inner #gnb{
+    position: absolute;
+    bottom: 0px;
+    right: 0px;
+}
+/* 일자 정렬 
+메뉴1메뉴2메뉴3메뉴4 */
+header .inner #gnb li{
+    float: left;
+    /* ???flex 변환법 flex-direction: row; */
+}
+header .inner #gnb li a{
+    /* 인라인 요소는 block을 이용하여 크기 조절 가능 */
+    display: block;
+    font: bold 15px/1 "arial";
+    color: #555;
+    padding: 20px 40px;
+    transition: all 0.5s;   
+}
+/* 커서를 갖다 올려두면 인라인 배경색이 #555로 변함 */
+header .inner #gnb li a:hover{
+    background: #555;
+    color: #fff;
+    
+}
+/* visual */
+figure{
+    width: 100%;
+    /* 전체 브라우저 높이에서 120px만큼 뺴줌 */
+    height: calc(100vh - 120px);
+    background: rgba(51, 51, 43, 0.103);
+    position: relative;
+    overflow: hidden;
+    padding-top: 150px;
+}
+figure video{
+    /* 영상을 figure 영역 안에 꽉 차도록 설정 */
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    /* 영상이 배경으로 되었으며 뿌옇게 됨 */
+    opacity: 0.3;
+    /* 영상이 잘리고 DJANGO 소개 뒷부분만 영상이 나옴 */
+    position: absolute;
+    /* 배경 영상이 위로 올라옴 */
+    top: 0px;
+    left: 0px;   
+}
+figure .inner{
+    width: 1180px;
+    margin: 0px auto;
+    position: relative;
+}
+/* DJANGO BACKEND PROGRAMMER 글씨 크기체 수정 */
+figure .inner h1{
+    font: normal 120px/1 "arial";
+    color: rgba(60, 59, 66, 0.623);
+    /* background-color: rgba(127, 255, 212, 0.137); */
+    margin-bottom: 20px;
+    text-align: right;
+}
+/* 서울시 관악구 신원동 */
+figure .inner p{
+    font: 16px/1.4 "arial";
+    color: rgb(35, 35, 39);
+    margin-bottom: 180px;
+    text-align: right;
+}
+/* Click more */
+figure .inner a{
+     /* click more 박스 오른쪽으로 옮기기 */
+    float:inline-end;
+    display:block;
+    width: 400px;
+    height: 30px;
+    border: 1px solid rgb(179, 154, 154);
+    font: bold 11px/30px "arial";
+    color: #fff;
+    text-align: center;
+    letter-spacing: 1px;
+    transition: all 0.5s;
+
+}
+figure .inner a:hover{
+    background: #fff;
+    color: #555;
+}
+/* news */
+section{
+    width: 100%;
+    padding: 200px 0px;
+}
+section .inner{
+    width: 1180px;
+    margin: 0px auto;
+}
+section .inner h1{
+    font: bold 24px/1 "arial";
+    color: #555;
+    text-align: center;
+    margin-bottom: 50px;
+}
+section .inner .wrap{
+    width: 100;
+}
+/* 자식 요소인 article의 float 해제 */
+section .inner .wrap::after{
+    content: " ";
+    display: block;
+    clear: both;
+}
+/* 당근 사진이 미니 사진 위로 올라옴 */
+section .inner .wrap article{
+    width: 280px;
+    float: left;
+    margin-right: 20px;
+}
+/* 맨 오른쪽 마지막 요소의 여백만 제거 */
+section .inner .wrap article:last-child{
+    margin-right: 0px;
+}
+/* 당근 설명 글씨 조금 내려감 */
+section .inner .wrap article h2{
+    margin-bottom: 10px;
+    text-align: center;
+}
+/* 당근 사진 이름 */
+section .inner .wrap article h2 a{
+    font: bold 16px/1 "arial";
+    color: #555;
+}
+/* 당근 이름 아래 설명글 */
+section .inner .wrap article p{
+    font: 14px/1.4 "arial";
+    color: #777;
+    text-align: left;
+}
+section .inner .wrap article .pic img:nth-of-type(1){
+    width: 300px;
+    height: 180px;
+    background: #333;
+    margin-bottom: 15px;
+    position: relative;
+    overflow: hidden;
+}
+/* !!! 두번째 inner */
+section .inner .wrap article .pic img:nth-of-type(2){
+    width: 200px;
+    height: 140px;
+    background: #333;
+    margin-bottom: 15px;
+    position: relative;
+    overflow: hidden;
+}
+/* ??? 사진들을 각자 크기를 고르고 싶은데 왜 한가지만 선택이 불가한지 */
+section .inner .wrap article .pic img:nth-of-type(1){
+    /* pic 프레임 안에 이미지를 꽉 채움 
+    첫 번째 사진 */
+    
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    
+    /* ???text-align:center처럼 사진 자체를 가운데로 정렬할 수 있는 명령어 */
+}
+/* ??? 사진들을 각자 크기를 고르고 싶은데 왜 한가지만 선택이 불가한지 */
+/* section .inner .wrap article .pic img:nth-of-type(2){
+  /
+    object-fit: cover;
+    width: 100%;
+    height: 150%;
+} */
+
+/* footer 시작 */
+footer{
+    width: 100%;
+    background: #333;
+    padding: 100px 0px;
+    border-top: 1px solid #888;
+}
+footer .inner{
+    width: 1180px;
+    margin: 0px auto;
+    position:relative;
+}
+/* 맨 아래 얇은 줄 */
+footer .inner .upper{
+    width: 100%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.336);
+    padding-bottom: 20px;
+}
+/* 상단 영역 float 해제 */
+footer .inner .upper::after{
+    content: "";
+    display: block;
+    clear: both;
+}
+footer .inner .upper h1{
+    /* float: left; 
+    flex로 변경*/
+    position: absolute;
+    font: bold 24px/1 "arial";
+    color: #666;
+    
+}
+footer .inner .upper ul{
+    /* float: right; */
+    position: absolute;
+    right: 0px;
+    display: inline-flex;
+}
+footer .inner .upper ul li {
+    float: left;
+    margin-left: 20px;
+}
+/* Policy Terms Family Sitemap 폰트 변경 */
+footer .inner .upper ul li a{
+    font: bold 14px/1 "arial";
+    color: #666;
+}
+footer .inner .lower{
+    width: 100%;
+    padding-top: 20px;
+}
+footer .inner .lower address{
+    width: 100%;
+    font: 12px/1.3 "arial";
+    color: #777;
+    margin-bottom: 20px;
+}
+footer .inner .lower p{
+    width: 100%;
+    font: 12px/2 "arial";
+    color: #777;
+}

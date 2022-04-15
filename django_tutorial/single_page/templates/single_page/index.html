@@ -4,9 +4,15 @@
 
 {% block part_style %}
 <link rel="stylesheet" href="{% static 'css/index.css' %}">
+<link rel="stylesheet" href="./ch8.css">
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<script defer src="https://kit.fontawesome.com/c47106c6a7.js" crossorigin="anonymous"></script>
 {% endblock part_style %}
 
 {% block content %}
+<title>포트폴리오 웹페이지</title>
+
+
 <div class='article_box'>
     <table class="table table-bordered table table-condensed table-striped">
         <tr class="table-primary">
@@ -16,7 +22,7 @@
         </tr>
         {% for article in latest_article_list %}
         <tr>
-            <td><a href="/community/view_detail/{{article.id}}">{{article.title}}</a></td>
+            <td><a href="/community/view_detail/{{article.id}}">{{article.title}}/a></td>
             <td>{{ article.name }}</td>
             <td>{{ article.cdate | date:"Y년 M d일 D" }}</td>
         </tr>

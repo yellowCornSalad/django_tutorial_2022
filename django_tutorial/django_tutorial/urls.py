@@ -19,6 +19,7 @@ from .views import UserCreateView, UserCreateDoneTV
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    # path('electro/', include('electro.urls')),
     path('', include('single_page.urls')),
     path('community/', include('community.urls')),
     path('dashboard/', include('dashboard.urls')),

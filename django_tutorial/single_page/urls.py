@@ -8,5 +8,5 @@ urlpatterns=[
     path('', index, name="index"), 
     
     # /aboutme
-    path('aboutme/', aboutMe, name="aboutMe"), 
+    path('aboutme/', aboutMe, name="aboutme"), 
 ]

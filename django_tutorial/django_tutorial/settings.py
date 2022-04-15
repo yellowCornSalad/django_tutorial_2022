@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'single_page',
     'widget_tweaks',
+    'bootstrap4',
 ]
 # crispy_forms 설정
 CRISPY_TEMPLATE_PACK = 'bootstrap4'

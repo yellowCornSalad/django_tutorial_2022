@@ -1,47 +1,52 @@
 {% extends "base.html" %}
-{% block title %}각 나라 인구 대시보드 {% endblock %}
+{% block title %}전기차 밥주기{% endblock %}
 
 {% block content %}
-    {% load crispy_forms_tags %}
-    <div class = "row mt-3 pt-3">
-        <div class = "col-md-4">
-            <div class="border p-3 shadow">
-                <h4>Add Data</h4>
-                <form method="post">
-                    {% csrf_token %}
-                    {{ form | crispy }}
-                    <button type = "submit" class = "btn btn-success btn-block">Add</button>
-                </form>
-            </div>
-        </div>
-        <div class="col-md-8">
-            <canvas id = "myChart" width="400" height = "400"></canvas>
+{% load crispy_forms_tags %}
+<div class="row mt-3 pt-3">
+    <div class="col-md-4">
+        <div class="border p-3 shadow">
+            <h4>Add Data</h4>
+            <form method="post">
+                {% csrf_token %}
+                {{ form | crispy }}
+                <button type="submit" class="btn btn-success btn-block">위치 확인</button>
+            </form>
         </div>
     </div>
+    <div class="col-md-8">
+        <canvas id="myChart" width="400" height="400"></canvas>
+    </div>
+</div>
 {% endblock %}
 
 {% block part_script %}
-    <!-- chart.js CDN -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
-    <style>
-        body {width: 80vw; height: 90vh; margin: 0 auto;}
-    </style>
-    <title>Document</title>
+<!-- chart.js CDN -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js"></script>
+<style>
+    body {
+        width: 80vw;
+        height: 90vh;
+        margin: 0 auto;
+    }
+</style>
+<title>Document</title>
 </head>
+
 <body>
- 
-<script>
-const ctx = document.getElementById('myChart').getContext('2d');
-const myChart = new Chart(ctx, {
-    type: 'bar',
-    data: {
-        // labels: ['대한민국', '미국'],
-        labels: [
-            {% for data in dataset %}
+
+    <script>
+        const ctx = document.getElementById('myChart').getContext('2d');
+        const myChart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                // labels: ['대한민국', '미국'],
+                labels: [
+                    {% for data in dataset %}
         '{{data.country}}',
         {% endfor %}
     ],
-    datasets: [{
+        datasets: [{
             label: '각 나라별 인구 수',
             // data: [50, 100],
             data: [
@@ -57,25 +62,25 @@ const myChart = new Chart(ctx, {
                 'rgba(153, 102, 255, 0.2)',
                 'rgba(255, 159, 64, 0.2)'
             ],
-            borderColor: [
-                'rgba(255, 99, 132, 1)',
-                'rgba(54, 162, 235, 1)',
-                'rgba(255, 206, 86, 1)',
-                'rgba(75, 192, 192, 1)',
-                'rgba(153, 102, 255, 1)',
-                'rgba(255, 159, 64, 1)'
-            ],
-            borderWidth: 1
+                borderColor: [
+                    'rgba(255, 99, 132, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)'
+                ],
+                    borderWidth: 1
         }]
     },
-    options: {
-        scales: {
-            y: {
-                beginAtZero: true
+        options: {
+            scales: {
+                y: {
+                    beginAtZero: true
+                }
             }
         }
-    }
 });
-</script>
+    </script>
 
-{% endblock %}
+    {% endblock %}
