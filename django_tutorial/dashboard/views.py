@@ -1,51 +1,56 @@
-from django.shortcuts import redirect, render
+from bs4 import BeautifulSoup as BS
+import requests
+from django.shortcuts import render
+# from django.shortcuts import redirect, render
 from dashboard.forms import CountryDataForm
 from dashboard.models import CountryData
 
 
 # Create your views here.
-def dashboard(request):
-    # 각 나라와 인구 숫자 가져오기
-    data = CountryData.objects.all()
 
+# Create your views here.
 
-    # add 버튼 클릭, 값 입력 요청 처리
-    if request.method == 'POST':
-        # DB 입력
-        form = CountryDataForm(request.POST)
-        # 폼에 입력한 나라
-        input_country = form.data.get('country', None)
-        # 폼에 입력한 인구 수
-        input_num = form.data.get('population', None)
-        # 입력된 곳에 데이터가 담겨 있으면
-        if form.is_valid():
-            # DB안의 나라 이름이 중복 된 경우 업데이트
-            # 아닌 경우, 나라 이름 추가
-            # CRUD: Create, Read, Update, Delete
-            CountryData.objects.update_or_create(
-                # filter => 유/무 체크 => 입력한 나라이름이 이미 존재하는 나라 이름과 같으면(이미 존재하는 나라이름이면)
-                country = input_country, 
-                # new value => 추가
-                # default 값은 form에 입력한 값임, d비버에서 맨위에 목록값인 country와 population을 위함.
-                defaults = {
-                    'country': input_country,
-                    'population': input_num
-                }
-            )
+def dashboard(request):  # 코드 구현
+    temp = request.POST.get('message')
+    url = 'http://openapi.kepco.co.kr/service/EvInfoServiceV2/getEvSearchList'
+    params = {'serviceKey': 'xcjmOs938MfzLWnUORs6dWmmxjKPXykAsj/r2u/JdDMCJqQeEvfhXCK+DWAIqGY4BShHzUzFRQqoSzAOMGZXzg==',
+              'pageNo': '1', 'numOfRows': '50', 'addr': temp}
+    response = requests.get(url, params=params)
+    soup = BS(response.text, 'html.parser')
 
-            # 데이터 save
-            # form.save()
-            return redirect('.')
-    # form 출력
-    else:
-    # form 객체 생성
-        form = CountryDataForm()
-    # 랜더링 전달 데이터와 폼 객체 저장
-    context = {'dataset':data, 'form' : form}
-    return render(request, 'dashboard/dashboard.html', context)
+    pc = []
+    num = 1
+    items = soup.find_all('item')
+    for i in items:
+        temp = []
+        a = float(i.find('lat').text)
+        b = float(i.find('longi').text)
+        c = int(i.find('cpstat').text)
+        if(c == 1):
+            c = "충전가능"
+        elif(c == 2):
+            c = "충전중"
+        elif(c == 3):
+            c = "고장/점검"
+        elif(c == 4):
+            c = "통신장애"
+        else:
+            c = "통신미연결"
+        d = i.find('addr').text
+        e = i.find('csnm').text
+        f = int(i.find('chargetp').text)
+        if(f == 1):
+            f = "완속"
+        elif(f == 2):
+            f = "급속"
+        temp.append(a)
+        temp.append(b)
+        temp.append(c)
+        temp.append(d)
+        temp.append(e)
+        temp.append(f)
+        temp.append(num)
+        pc.append(temp)
+        num += 1
 
-
-
-# class CountryData(models.Model):
-#     country = models.CharField(max_length=100)
-#     population = models.IntegerField()
+    return render(request, "dashboard/dashboard.html", {'pc': pc})

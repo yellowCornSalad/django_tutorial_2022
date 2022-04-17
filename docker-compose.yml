@@ -1,0 +1,24 @@
+# 도커 최신버전 사용 지정
+##### nginx 설정 후
+version: '3'
+services:
+  nginx:
+    build: ./nginx
+    volumes:
+      - static_volume:/usr/src/app/_static
+    ports:
+      - 80:80
+    depends_on:
+      - web
+  web:
+    build: .
+    command: gunicorn django_tutorial.wsgi:application --bind 0.0.0.0:8000
+    volumes:
+      - static_volume:/usr/src/app/_static
+      - ./:/usr/src/app/
+    expose:
+      - 8000
+    env_file:
+      - ./envs/.env.prod
+volumes:
+  static_volume:

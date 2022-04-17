@@ -66,8 +66,8 @@
                     </p>
                     <p>
                     <h3>* 쭈노마켓 창업(전자기기 수리 및 매입)<br></h3>
-                    * 구래구래 창업(블록체인 스타트업)
-                    <자격증 목록>
+                    * 구래구래 창업(블록체인 스타트업)<br>
+                    <자격증 목록><br>
                         * 유통관리사
                         </p>
                 </div>
@@ -75,12 +75,109 @@
             </div>
             <div class="col-md-6 col-sm-6">
                 <div class="block wow fadeInRight" data-wow-delay=".3s" data-wow-duration="500ms">
-                    <img src="{% static 'imgs/award4.png' %}" alt="">
+                    <img src="{% static 'imgs/homebg.jpg' %}" alt="">
                 </div>
             </div>
         </div>
     </div>
 </section> <!-- /#about -->
+<!--
+    
+                    ==================================================
+                    Portfolio Section Start
+                    ================================================== -->
+<section id="feature">
+    <div class="container">
+        <div class="section-heading">
+            <h1 class="title wow fadeInDown" data-wow-delay=".3s">사용가능한 언어</h1>
+            <p class="wow fadeInDown" data-wow-delay=".5s">
+                백엔드 기술 위주로 준비하였습니다.
+            </p>
+        </div>
+        <div class="row">
+            <div class="col-md-4 col-lg-4 col-xs-12">
+                <div class="media wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="300ms">
+                    <div class="media-left">
+                        <div class="icon">
+                            <img class="test1" src="{% static 'imgs/html.png' %}" alt="html">
+
+                            <!-- <i class="ion-ios-flask-outline"></i> -->
+                        </div>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">HTML</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, sint.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-4 col-xs-12">
+                <div class="media wow fadeInDown animated" data-wow-duration="500ms" data-wow-delay="600ms">
+                    <div class="media-left">
+                        <div class="icon">
+                            <img class="test1" src="{% static 'imgs/CSS.png' %}" alt="html">
+                        </div>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">CSS</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, sint.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-4 col-xs-12">
+                <div class="media wow fadeInDown animated" data-wow-duration="500ms" data-wow-delay="900ms">
+                    <div class="media-left">
+                        <div class="icon">
+                            <img class="test1" src="{% static 'imgs/js.png' %}" alt="js">
+                        </div>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">JavaScript</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, sint.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-4 col-xs-12">
+                <div class="media wow fadeInDown animated" data-wow-duration="500ms" data-wow-delay="1200ms">
+                    <div class="media-left">
+                        <div class="icon">
+                            <img class="test1" src="{% static 'imgs/java.png' %}" alt="java">
+                        </div>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">JAVA</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, sint.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-4 col-xs-12">
+                <div class="media wow fadeInDown animated" data-wow-duration="500ms" data-wow-delay="1500ms">
+                    <div class="media-left">
+                        <div class="icon">
+                            <img class="test1" src="{% static 'imgs/python.png' %}" alt="python">
+                        </div>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">Python</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, sint.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-lg-4 col-xs-12">
+                <div class="media wow fadeInDown animated" data-wow-duration="500ms" data-wow-delay="1800ms">
+                    <div class="media-left">
+                        <div class="icon">
+                            <img class="test1" src="{% static 'imgs/solidity.png' %}" alt="solidity">
+                        </div>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">Solidity</h4>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, sint.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section> <!-- /#feature -->
 <!--
                     ==================================================
                     Portfolio Section Start
@@ -109,7 +206,7 @@
                     </div>
                     <figcaption>
                         <h4>
-                            <a href="#">
+                            <a href="{% url 'single_page:aboutme' %}">
                                 전기차 밥주기
                             </a>
                         </h4>
@@ -241,7 +338,7 @@
         </div>
     </div>
 </section> <!-- #works -->
-<!-- 수상내역 시작 -->
+<!-- 활동내역 시작 -->
 <section id="works" class="works">
     <div class="container">
         <div class="section-heading">
@@ -279,10 +376,10 @@
             <div class="col-sm-4 col-xs-12">
                 <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="300ms">
                     <div class="img-wrapper">
-                        <img src="{% static 'imgs/gurae.png' %}" class="img-responsive" alt="this is a title">
+                        <img src="{% static 'imgs/blockchain.jpg' %}" class="img-responsive" alt="this is a title">
                         <div class="overlay">
                             <div class="buttons">
-                                <a rel="gallery" class="fancybox" href="{% static 'imgs/gurae.png' %}">Demo</a>
+                                <a rel="gallery" class="fancybox" href="{% static 'imgs/blockchain.jpg' %}">Demo</a>
                                 <a target="_blank" href="single-portfolio.html">Details</a>
                             </div>
                         </div>
@@ -302,11 +399,11 @@
             <div class="col-sm-4 col-xs-12">
                 <figure class="wow fadeInLeft animated" data-wow-duration="500ms" data-wow-delay="300ms">
                     <div class="img-wrapper">
-                        <img src="{% static 'imgs/portfolio/item-3.jpg' %}" class="img-responsive" alt="">
+                        <img src="{% static 'imgs/mbc.png' %}" class="img-responsive" alt="">
                         <div class="overlay">
                             <div class="buttons">
                                 <a rel="gallery" class="fancybox" href="images/portfolio/item-3.jpg">Demo</a>
-                                <a target="_blank" href="single-portfolio.html">Details</a>
+                                <a target="_blank" href="https://youtu.be/S450ZpaAZ-Q?t=420">영상재생</a>
                             </div>
                         </div>
                     </div>
@@ -330,18 +427,19 @@
                             <div class="buttons">
                                 <a rel="gallery" class="fancybox"
                                     href="{% static 'imgs/portfolio/item-4.jpg' %}">Demo</a>
-                                <a target="_blank" href="single-portfolio.html">Details</a>
+                                <a target="_blank" href="single-portfolio.html">Detail</a>
                             </div>
                         </div>
                     </div>
                     <figcaption>
                         <h4>
                             <a href="#">
-                                Make Up elements
+                                평창올림픽
+                                테스트이벤트 봉사활동
                             </a>
                         </h4>
                         <p>
-                            Lorem ipsum dolor.
+                            평창올림픽 TECH팀에서 시설관련 작업에 도움을 주었습니다.
                         </p>
                     </figcaption>
                 </figure>
@@ -397,102 +495,7 @@
     </div>
 </section>
 <!-- 수상내역 종료 -->
-<!--
-    
-                    ==================================================
-                    Portfolio Section Start
-                    ================================================== -->
-<section id="feature">
-    <div class="container">
-        <div class="section-heading">
-            <h1 class="title wow fadeInDown" data-wow-delay=".3s">Offer From Me</h1>
-            <p class="wow fadeInDown" data-wow-delay=".5s">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sed,<br> quasi dolores numquam dolor vero ex,
-                tempora commodi repellendus quod laborum.
-            </p>
-        </div>
-        <div class="row">
-            <div class="col-md-4 col-lg-4 col-xs-12">
-                <div class="media wow fadeInUp animated" data-wow-duration="500ms" data-wow-delay="300ms">
-                    <div class="media-left">
-                        <div class="icon">
-                            <i class="ion-ios-flask-outline"></i>
-                        </div>
-                    </div>
-                    <div class="media-body">
-                        <h4 class="media-heading">Media heading</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, sint.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-lg-4 col-xs-12">
-                <div class="media wow fadeInDown animated" data-wow-duration="500ms" data-wow-delay="600ms">
-                    <div class="media-left">
-                        <div class="icon">
-                            <i class="ion-ios-lightbulb-outline"></i>
-                        </div>
-                    </div>
-                    <div class="media-body">
-                        <h4 class="media-heading">Well documented.</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, sint.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-lg-4 col-xs-12">
-                <div class="media wow fadeInDown animated" data-wow-duration="500ms" data-wow-delay="900ms">
-                    <div class="media-left">
-                        <div class="icon">
-                            <i class="ion-ios-lightbulb-outline"></i>
-                        </div>
-                    </div>
-                    <div class="media-body">
-                        <h4 class="media-heading">Well documented.</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, sint.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-lg-4 col-xs-12">
-                <div class="media wow fadeInDown animated" data-wow-duration="500ms" data-wow-delay="1200ms">
-                    <div class="media-left">
-                        <div class="icon">
-                            <i class="ion-ios-americanfootball-outline"></i>
-                        </div>
-                    </div>
-                    <div class="media-body">
-                        <h4 class="media-heading">Free updates</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, sint.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-lg-4 col-xs-12">
-                <div class="media wow fadeInDown animated" data-wow-duration="500ms" data-wow-delay="1500ms">
-                    <div class="media-left">
-                        <div class="icon">
-                            <i class="ion-ios-keypad-outline"></i>
-                        </div>
-                    </div>
-                    <div class="media-body">
-                        <h4 class="media-heading">Solid Support</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, sint.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-lg-4 col-xs-12">
-                <div class="media wow fadeInDown animated" data-wow-duration="500ms" data-wow-delay="1800ms">
-                    <div class="media-left">
-                        <div class="icon">
-                            <i class="ion-ios-barcode-outline"></i>
-                        </div>
-                    </div>
-                    <div class="media-body">
-                        <h4 class="media-heading">Simple Installation</h4>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatum, sint.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</section> <!-- /#feature -->
+
 
 
 <!--
@@ -517,45 +520,6 @@
         </div>
     </div>
 </section>
-
-<!--
-                    ==================================================
-                    Footer Section Start
-                    ================================================== -->
-<footer id="footer">
-    <div class="container">
-        <div class="col-md-8">
-            Shared by <i class="fa fa-love"></i><a href="https://bootstrapthemes.co">BootstrapThemes</a>
-        </div>
-        <div class="col-md-4">
-            <!-- Social Media -->
-            <ul class="social">
-                <li>
-                    <a href="http://wwww.fb.com/themefisher" class="Facebook">
-                        <i class="ion-social-facebook"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="http://wwww.twitter.com/themefisher" class="Twitter">
-                        <i class="ion-social-twitter"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="#" class="Linkedin">
-                        <i class="ion-social-linkedin"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="http://wwww.fb.com/themefisher" class="Google Plus">
-                        <i class="ion-social-googleplus"></i>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</footer> <!-- /#footer -->
-
-</body>
 
 
 {% endblock content %}
