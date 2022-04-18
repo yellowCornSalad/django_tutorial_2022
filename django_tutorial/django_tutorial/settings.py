@@ -27,7 +27,7 @@ with open(os.path.join(BASE_DIR, '', 'django_tutorial/secret_key.txt')) as f:
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '3.34.126.63']
 
 
 # Application definition

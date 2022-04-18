@@ -101,6 +101,7 @@ a:hover {
 }
 #top-bar .navbar-nav > li > a:hover {
   background: transparent;
+  
 }
 #top-bar.animated-header {
   padding: 20px 0;
@@ -194,7 +195,7 @@ a:hover {
   border-radius: 0;
 }
 #call-to-action {
-  background: #02bdd5;
+  background: #69777295;
   background-size: cover;
   background-attachment: fixed;
   padding: 80px 0;
@@ -520,11 +521,12 @@ figure figcaption p {
   margin-top: 10px;
 }
 #footer .copyright a {
-  color: #02bdd5;
+  color: #9a833d;
 }
 #footer .social {
   text-align: right;
   margin-bottom: 0;
+
 }
 #footer .social li {
   display: inline-block;
@@ -532,7 +534,7 @@ figure figcaption p {
 }
 #footer .social li a {
   font-size: 22px;
-  color: #02bdd5;
+  color: #0000009e;
 }
 .cd-headline.slide .cd-words-wrapper {
   color: #02bdd5;
@@ -934,6 +936,7 @@ article {
 }
 .blog-post-image {
   margin-top: 30px;
+  
 }
 .sidebar {
   padding-top: 60px;

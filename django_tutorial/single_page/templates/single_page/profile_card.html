@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}프로필카드{% endblock %}
+
+{% block part_style %}
+<link rel="stylesheet" href="{% static './css/ch7_profile.css' %}">
+<script defer src="js/ie.js"></script>
+
+{% endblock %}
+
+{% block content %}
+
+<body>
+
+
+    <section>
+        <nav class="menu">
+            <a href="#"><i class="fas fa-bars"></i></a>
+            <a href="#"><i class="far fa-sticky-note"></i></a>
+        </nav>
+        <article class="profile">
+
+            <img src="{% static './imgs/selfphoto.jpeg' %}" alt="프로필 이미지">
+
+            <h1>JUNHOLAB</h1>
+            <h2>DJANGO BACKEND DEVELOPER</h2>
+
+            <a href="#" class="btnView">VIEW MORE</a>
+        </article>
+        <!-- 인스타, 구글 메일 주소 -->
+        <ul class="contact">
+            <li>
+                <i class="fab fab fa-instagram"></i>
+                <span>Visit My Instagram page.</span>
+            </li>
+            <li>
+                <i class="fab fab fab fa-google"></i>
+                <span>qo980120@gmail.com</span>
+            </li>
+        </ul>
+        <!-- 선택한 프로필 카드의 버튼만 활성화 시키기 class="on" -->
+        <nav class="others">
+            <a href="member1.html" class="on"></a>
+            <a href="member2.html" class="on"></a>
+            <a href="member3.html" class="on"></a>
+            <a href="member4.html" class="on"></a>
+        </nav>
+        <!-- 멤버별 프로필완성 -->
+
+        <body class="member1"></body>
+    </section>
+
+
+</body>
+
+
+{% endblock content %}

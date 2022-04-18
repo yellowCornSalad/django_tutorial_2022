@@ -14,7 +14,7 @@ def dashboard(request):  # 코드 구현
     temp = request.POST.get('message')
     url = 'http://openapi.kepco.co.kr/service/EvInfoServiceV2/getEvSearchList'
     params = {'serviceKey': 'xcjmOs938MfzLWnUORs6dWmmxjKPXykAsj/r2u/JdDMCJqQeEvfhXCK+DWAIqGY4BShHzUzFRQqoSzAOMGZXzg==',
-              'pageNo': '1', 'numOfRows': '50', 'addr': temp}
+              'pageNo': '1', 'numOfRows': '100', 'addr': temp}
     response = requests.get(url, params=params)
     soup = BS(response.text, 'html.parser')
 
