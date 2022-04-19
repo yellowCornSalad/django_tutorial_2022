@@ -1,0 +1,185 @@
+@import url("https://fonts.googleapis.com/css2?family=0rbitron&display=swap");
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+ul, ol{
+    list-style: none;
+}
+a{
+    text-decoration: none;;
+}
+body{
+    background-color: #ebfaff;
+}
+section{
+    width: 340px;
+    padding: 30px;
+    background-color: rgb(203, 211, 240);
+    margin: 50px auto;
+    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+section nav.menu{
+    width: 100%;
+}
+section nav.menu::after{
+    /* content: ""; */
+    display: block;
+    clear: both;
+}
+section nav.menu a{
+    font-size: 20px;
+    color: #666;
+}
+section nav.menu a:nth-of-type(1){
+    float: left;
+}
+section nav.menu a:nth-of-type(2){
+    float: right;
+}
+/* 프로필 이미지 */
+section article.profile{
+    width: 100;
+    text-align: center;
+}
+
+
+section article.profile img{
+    width: 150px;
+    height: 200px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    box-shadow: 5px 15px 30px rgba(18, 49, 95, 0.1);
+}
+/* JUNHOLAB 글씨체 */
+section article.profile h1{
+    font-weight: bold;
+    font-size: 22px;
+    font-family: "arial";
+    line-height: 1;
+    color: #555;
+    margin-bottom: 5px;
+}
+/* DJANGO BACKEND DEVELOPER */
+section article.profile h2{
+    font-weight: normal;
+    font-size: 12px;
+    font-family: "arial";
+    color: rgb(75, 102, 175);
+    margin-bottom: 30px;
+}
+/* VIEW MORE */
+section a.btnView{
+    display: block;
+    width: 180px;
+    height: 32px;
+    margin: 0px auto 20px;
+    background-color: #444;
+    border-radius: 16px;
+    font-weight: bold;
+    font-size: 10px;
+    font-family: "arial";
+    color: #fff;
+    line-height: 32px;
+    text-align: center;
+    background: linear-gradient(45deg, #4affff, #35e0f7);
+    box-shadow: 5px 10px 20px rgba(0, 255, 255, 0.493);
+}
+section ul.contact {
+    margin-bottom: 25px;
+}
+section ul.contact li{
+    width: 100%;
+    padding: 10px 0px;
+    border-bottom: 1px solid #eee;
+}
+section ul.contact li:last-child{
+    border-bottom: none;
+}
+section ul.contact li i{
+    width: 20%;
+    text-align: center;
+    color: #555;
+    font-size: 15px;
+    text-shadow: 2px 2px 2px #ddd;
+}
+section ul.contact li span{
+    font-weight: normal;
+    font-size: 11px;
+    font-family:"orbitron";
+    color: #555;
+    letter-spacing: 1px;
+}
+/*  연락처 목록 */
+section ul.contact {
+    margin-bottom: 25px;
+}
+section ul.contact li{
+    width: 100%;
+    padding: 10px 0px;
+    border-bottom: 1px solid #eee;
+}
+section ul.contact li:last-child{
+    border-bottom: none;
+}
+/* 인스타, google 아이콘 그림자 */
+section ul.contact li i {
+    width: 20%;
+    text-align: center;
+    color: #555;
+    font-size: 15px;
+    text-shadow: 2px 2px 2px rgb(155, 74, 74);
+}
+section ul.contact li span{
+    font-weight: normal;
+    font-size: 11px;
+    font-family: "orbitron";
+    color: #555;
+    letter-spacing: 1px;
+}
+/* 멤버별 프로필 링크 => 메일 주소 아래 공간 넓히기 */
+section nav.others{
+    width: 100%;
+    text-align: center;
+}
+section nav.others a{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin: 0px 10px;
+}
+/* 넓혀진 공간에 멤버별 프로필 링크 입력 */
+section nav.others a:nth-last-of-type(1){
+    background-color: rgba(14, 64, 138, 0.493);
+    box-shadow: rgba(14, 64, 138, 0.493);
+}
+section nav.others a:nth-last-of-type(2){
+    background-color: rgba(14, 64, 138, 0.493);
+    box-shadow: rgba(14, 64, 138, 0.493);
+}
+section nav.others a:nth-last-of-type(3){
+    background-color: rgba(14, 64, 138, 0.493);
+    box-shadow: rgba(14, 64, 138, 0.493);
+}
+section nav.others a:nth-last-of-type(4){
+    background-color: rgba(14, 64, 138, 0.493);
+    box-shadow: rgba(14, 64, 138, 0.493);
+}
+/* 선택한 멤버의 프로필 카드만 활성화 */
+section nav.others a{
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    border-radius: 30%;
+    margin: 0px 10px;
+    opacity: 0.4;
+    filter: saturate(0.7);
+}
+section nav.others a.on{
+    opacity: 1;
+    filter: saturate(1);
+}

@@ -1,0 +1,30 @@
+.article_box{
+    width: 60vw;
+    /* background-color: rgb(213, 214, 214); */
+    margin: 0 auto;
+  }
+  /* p > span{
+    padding: 10px 20px;
+    text-align: center;
+  }
+  p > span:first-of-type{
+    width: 150px;
+    display: inline-block;
+  }
+  ul {
+    border-top: 2px solid gray;
+  }
+  ul > li> span{
+    margin: 5px;
+  }
+  ul > li> span:first-of-type{
+    width: 150px;
+    display: inline-block;
+  } */
+  p.main_img{
+      width: 60vw;
+      margin: 10px auto;
+  }
+  .main_img img{
+      width: 100%;
+  }
